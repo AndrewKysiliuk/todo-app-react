@@ -26,7 +26,7 @@ export default class App extends Component {
 
     deleteItem = (id) => {
         this.setState(({todoData}) => {
-            return {todoData: todoData.filter(x => x.id !== id)}
+            return {todoData: todoData.map(x => {return {...x}}).filter(x => x.id !== id)}
         });
     };
 
